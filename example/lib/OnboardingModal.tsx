@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Dimensions, Image} from 'react-native';
+import {View, Dimensions, Text, TouchableOpacity} from 'react-native';
 import Modal from 'react-native-modal';
 import Carousel from 'react-native-snap-carousel';
 import SliderItem from './components/SliderItem';
@@ -39,7 +39,11 @@ export default class ClassComponent extends Component<IProps, IState> {
     />
   );
 
-  renderBottomButton = () => <View></View>;
+  renderBottomButton = () => (
+    <TouchableOpacity style={styles.buttonStyle} onPress={() => {}}>
+      <Text style={styles.buttonTextStyle}>Let's Go</Text>
+    </TouchableOpacity>
+  );
 
   renderOnboardingContent = () => (
     <View style={styles.container}>

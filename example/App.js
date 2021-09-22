@@ -10,8 +10,8 @@ const onboardingData = [
     illustration: require('./lib/assets/watering.png'),
   },
   {
-    title: 'My Garden',
-    subtitle: 'I am beautifying my garden',
+    title: 'Flower Care',
+    subtitle: 'Care for flowers at the beginning of spring',
     illustration: require('./lib/assets/watering-2.png'),
   },
   {
