@@ -1,15 +1,5 @@
 <img alt="React Native Typescript Library Starter" src="assets/logo.png" width="1050"/>
 
-[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
-
-[![React Native Typescript Library Starter](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
-
-[![npm version](https://img.shields.io/npm/v/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
-[![npm](https://img.shields.io/npm/dt/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
-![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
-
 <p align="center">
   <img alt="React Native Typescript Library Starter"
         src="assets/Screenshots/typescript.jpg" />
@@ -41,9 +31,8 @@ Build completed!
 
 Add the dependency:
 
-```bash
-npm i react-native-typescript-library-starter
-```
+````bash
+npm i react-native-onboarding-modal
 
 ## Peer Dependencies
 
@@ -52,7 +41,7 @@ npm i react-native-typescript-library-starter
 ```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
-```
+````
 
 # Usage
 
@@ -110,7 +99,7 @@ Change log will be here !
 
 ## Author
 
-FreakyCoder, kurayogun@gmail.com
+Sevval Eygul, sevvalleygull@gmail.com
 
 ## License
 
