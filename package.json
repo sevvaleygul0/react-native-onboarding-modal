@@ -59,5 +59,10 @@
       "npx prettier --write",
       "eslint src/*.js --fix-dry-run"
     ]
+  },
+  "dependencies": {
+    "@types/react-native-snap-carousel": "^3.8.4",
+    "react-native-modal": "^13.0.0",
+    "react-native-snap-carousel": "^3.9.1"
   }
 }
