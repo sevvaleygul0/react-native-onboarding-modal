@@ -22,7 +22,13 @@ const onboardingData = [
 ];
 
 const App = () => {
-  return <OnboardingModal isVisible={true} onboardingData={onboardingData} />;
+  return (
+    <OnboardingModal
+      isVisible={true}
+      onboardingData={onboardingData}
+      buttonText="Let's Go"
+    />
+  );
 };
 
 const styles = StyleSheet.create({

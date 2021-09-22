@@ -6,14 +6,16 @@ import SliderItem from './components/SliderItem';
 /**
  * ? Local Imports
  */
-import styles from './OnboardingModal.style';
+import styles, {_buttonStyle} from './OnboardingModal.style';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 interface IProps {
   containerStyle: any;
   onboardingData: any;
   carouselRef: any;
+  buttonBackgroundColor?: string;
+  cardBackgroundColor?: string;
+  buttonText?: string;
 }
 
 interface IState {}
@@ -40,8 +42,10 @@ export default class ClassComponent extends Component<IProps, IState> {
   );
 
   renderBottomButton = () => (
-    <TouchableOpacity style={styles.buttonStyle} onPress={() => {}}>
-      <Text style={styles.buttonTextStyle}>Let's Go</Text>
+    <TouchableOpacity
+      style={_buttonStyle(this.props.buttonBackgroundColor)}
+      onPress={() => {}}>
+      <Text style={styles.buttonTextStyle}>{this.props.buttonText}</Text>
     </TouchableOpacity>
   );
 

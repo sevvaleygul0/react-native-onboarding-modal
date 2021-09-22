@@ -3,7 +3,7 @@ import {View, Image, Text} from 'react-native';
 /**
  * ? Local Imports
  */
-import styles from './SliderItem.style';
+import styles, {_contentContainer} from './SliderItem.style';
 
 interface IProps {
   data: any;
@@ -17,7 +17,9 @@ export default class ClassComponent extends Component<IProps, IState> {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.props);
+  }
 
   renderPhoto = () => (
     <Image style={styles.photoStyle} source={this.props.data.illustration} />
@@ -36,7 +38,7 @@ export default class ClassComponent extends Component<IProps, IState> {
   );
 
   renderContent = () => (
-    <View style={styles.contentContainer}>
+    <View style={_contentContainer()}>
       {this.renderPhoto()}
       {this.renderTitle()}
       {this.renderDescription()}
