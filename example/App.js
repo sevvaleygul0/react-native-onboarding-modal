@@ -6,7 +6,18 @@ import OnboardingModal from './lib/OnboardingModal.tsx';
 const onboardingData = [
   {
     title: 'My Garden',
-    illustration: require('./lib/assets/plant.png'),
+    subtitle: 'I am beautifying my garden',
+    illustration: require('./lib/assets/watering.png'),
+  },
+  {
+    title: 'My Garden',
+    subtitle: 'I am beautifying my garden',
+    illustration: require('./lib/assets/watering-2.png'),
+  },
+  {
+    title: 'My Garden',
+    subtitle: 'I am beautifying my garden',
+    illustration: require('./lib/assets/watering-3.png'),
   },
 ];
 

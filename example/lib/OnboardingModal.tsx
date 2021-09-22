@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Dimensions, Image} from 'react-native';
 import Modal from 'react-native-modal';
 import Carousel from 'react-native-snap-carousel';
+import SliderItem from './components/SliderItem';
 /**
  * ? Local Imports
  */
@@ -26,9 +27,7 @@ export default class ClassComponent extends Component<IProps, IState> {
 
   componentDidMount() {}
 
-  carouselRenderItem = (item: any) => (
-    <Image source={item.illustration} style={{width: 200, height: 200}}></Image>
-  );
+  carouselRenderItem = (item: any) => <SliderItem data={item} />;
 
   renderCarousel = () => (
     <Carousel
@@ -36,7 +35,7 @@ export default class ClassComponent extends Component<IProps, IState> {
       data={this.props.onboardingData}
       renderItem={({item}) => this.carouselRenderItem(item)}
       sliderWidth={windowWidth * 0.95}
-      itemWidth={windowWidth * 0.8}
+      itemWidth={windowWidth * 0.75}
     />
   );
 
