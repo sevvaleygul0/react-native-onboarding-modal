@@ -1,5 +1,6 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, Dimensions, View, Text} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 
 import OnboardingModal from './lib/OnboardingModal.tsx';
 
@@ -20,6 +21,8 @@ const onboardingData = [
     illustration: require('./lib/assets/watering-3.png'),
   },
 ];
+
+const windowWidth = Dimensions.get('window').width;
 
 const App = () => {
   const [isModalVisible, setIsModalVisible] = React.useState(true);

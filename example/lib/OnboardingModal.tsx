@@ -27,6 +27,7 @@ interface IProps {
   buttonTextColor?: string;
   sliderItemComponent?: any;
   onBottomButtonPress?: () => void;
+  carouselComponent: any;
 }
 
 interface IState {}
@@ -44,16 +45,20 @@ export default class ClassComponent extends Component<IProps, IState> {
     <SliderItem {...this.props} data={item} />
   );
 
-  renderCarousel = () => (
-    <Carousel
-      {...this.props}
-      ref={this.props.carouselRef}
-      data={this.props.onboardingData}
-      renderItem={({item}) => this.carouselRenderItem(item)}
-      sliderWidth={windowWidth * 0.95}
-      itemWidth={windowWidth * 0.75}
-    />
-  );
+  renderCarousel = () => {
+    return (
+      this.props.carouselComponent || (
+        <Carousel
+          {...this.props}
+          ref={this.props.carouselRef}
+          data={this.props.onboardingData}
+          renderItem={({item}) => this.carouselRenderItem(item)}
+          sliderWidth={windowWidth * 0.95}
+          itemWidth={windowWidth * 0.75}
+        />
+      )
+    );
+  };
 
   renderBottomButton = () => {
     if (!this.props.disableBottomButton) {
