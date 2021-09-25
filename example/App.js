@@ -22,11 +22,13 @@ const onboardingData = [
 ];
 
 const App = () => {
+  const [isModalVisible, setIsModalVisible] = React.useState(true);
   return (
     <OnboardingModal
-      isVisible={true}
+      isVisible={isModalVisible}
       onboardingData={onboardingData}
       buttonText="Let's Go"
+      onBottomButtonPress={() => setIsModalVisible(false)}
     />
   );
 };

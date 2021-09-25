@@ -26,6 +26,7 @@ interface IProps {
   buttonContainer?: any;
   buttonTextColor?: string;
   sliderItemComponent?: any;
+  onBottomButtonPress?: () => void;
 }
 
 interface IState {}
@@ -60,7 +61,9 @@ export default class ClassComponent extends Component<IProps, IState> {
         this.props.buttonContainer || (
           <TouchableOpacity
             style={_buttonStyle(this.props.buttonBackgroundColor)}
-            onPress={() => {}}>
+            onPress={
+              this.props.onBottomButtonPress && this.props.onBottomButtonPress
+            }>
             <Text style={_buttonTextStyle(this.props.buttonTextColor)}>
               {this.props.buttonText}
             </Text>
