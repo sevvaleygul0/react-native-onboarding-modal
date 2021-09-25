@@ -26,16 +26,16 @@ type CustomImageStyleProp =
   | Array<StyleProp<ImageStyle>>;
 
 interface IProps {
-  containerStyle: CustomViewStyleProp;
+  cardContainerStyle?: CustomViewStyleProp;
   onboardingData: any;
-  carouselRef: any;
+  carouselRef?: any;
   buttonBackgroundColor?: string;
   buttonText?: string;
   disableBottomButton?: boolean;
   buttonContainer?: CustomViewStyleProp;
   buttonTextColor?: string;
   onBottomButtonPress?: () => void;
-  carouselComponent: any;
+  carouselComponent?: any;
   titleStyle?: CustomTextStyleProp;
   subtitleStyle?: CustomTextStyleProp;
   photoStyle?: CustomImageStyleProp;
@@ -44,7 +44,7 @@ interface IProps {
 
 interface IState {}
 
-export default class ClassComponent extends Component<IProps, IState> {
+export default class OnboardingModal extends Component<IProps, IState> {
   carouselRef = React.createRef<any>();
   constructor(props: IProps) {
     super(props);

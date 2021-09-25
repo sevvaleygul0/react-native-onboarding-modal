@@ -1,5 +1,13 @@
 import React, {Component} from 'react';
-import {View, Image, Text, TextStyle, ImageStyle} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  TextStyle,
+  ImageStyle,
+  ViewStyle,
+  StyleProp,
+} from 'react-native';
 /**
  * ? Local Imports
  */
@@ -9,6 +17,8 @@ import styles, {
   _subtitleTextStyle,
 } from './SliderItem.style';
 
+type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+
 interface IProps {
   data: any;
   photoStyle?: ImageStyle;
@@ -17,6 +27,7 @@ interface IProps {
   titleColor?: string;
   subtitleColor?: string;
   cardBackgroundColor?: string;
+  cardContainerStyle?: CustomViewStyleProp;
 }
 
 interface IState {}
@@ -56,7 +67,11 @@ export default class ClassComponent extends Component<IProps, IState> {
   );
 
   renderContent = () => (
-    <View style={_contentContainer(this.props.cardBackgroundColor)}>
+    <View
+      style={[
+        this.props.cardContainerStyle,
+        _contentContainer(this.props.cardBackgroundColor),
+      ]}>
       {this.renderPhoto()}
       {this.renderTitle()}
       {this.renderDescription()}

@@ -5,34 +5,13 @@
         src="assets/Screenshots/typescript.jpg" />
 </p>
 
-## Library Usage
-
-- `npm i`
-- Delete example folder
-- Delete build folder
-- Make your own library into the `lib` folder
-- Change package.json
-- Change README for your own documentation
-- `npm run build`
-
-```
-> react-native-typescript-library-starter@0.1.0 build /Users/kuray/Coursion/MyLibraries/ReactNative/react-native-typescript-library-starter
-> cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!
-
-Build completed!
-```
-
-- Test your build/dist into the new project
-- Finally, time to npm publish :)
-
-### Below part is for Documentation ! Remove above Library Usage
-
 # Installation
 
 Add the dependency:
 
-````bash
+```bash
 npm i react-native-onboarding-modal
+```
 
 ## Peer Dependencies
 
@@ -41,57 +20,81 @@ npm i react-native-onboarding-modal
 ```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
-````
+"react-native-modal": ">=  13.0.0",
+"react-native-snap-carousel": ">=  3.9.1"
+```
 
 # Usage
 
 ## Import
 
 ```jsx
-import MyComponent from "react-native-typescript-library-starter";
+import OnboardingModal from "react-native-onboarding-modal";
 ```
 
-## Fundamental Usage
+## Data Format
 
 ```jsx
-<MyComponent />
+const exampleData = {
+  {
+    title: 'Love Nature',
+    subtitle: "Let's live close to nature",
+    illustration: require('./assets/watering.png'),
+  },
+}
 ```
 
-## Example Project 😍
+## Basic Usage
 
-You can checkout the example project 🥰
+```jsx
+<OnboardingModal
+  data={exampleData}
+  onBottomButtonPress={() => console.log("Handle Let's Go Button")}
+/>
+```
 
-Simply run
+## Advanced Usage
 
-- `npm i`
-- `react-native run-ios/android`
-
-should work of the example project.
+```jsx
+<OnboardingModal
+  onboardingData={exampleData}
+  buttonTextColor="#51186E"
+  buttonBackgroundColor="#DCCFE2"
+  photoStyle={{ width: 300, height: 300 }}
+  titleStyle={{ fontSize: 32, color: "#8066BA" }}
+  onBottomButtonPress={() => console.log("Handle Let's Go Button")}
+/>
+```
 
 # Configuration - Props
 
 ## Fundamentals
 
-| Property    |  Type  |  Default  | Description           |
-| ----------- | :----: | :-------: | --------------------- |
-| title       | string | undefined | change the title      |
-| description | string | undefined | change the descrition |
+| Property       | Type |  Default  | Description                  |
+| -------------- | :--: | :-------: | ---------------------------- |
+| onboardingData | any  | undefined | set data data shown in modal |
 
 ## Customization (Optionals)
 
-| Property       |   Type    |  Default  | Description                                                            |
-| -------------- | :-------: | :-------: | ---------------------------------------------------------------------- |
-| enableButton   |  boolean  |   false   | let you enable the button (must use it for button)                     |
-| onPress        | function  | undefined | set your own logic for the button functionality when it is pressed     |
-| buttonText     |  string   | undefined | change the button's text                                               |
-| style          | ViewStyle |  default  | set or override the style object for the main container                |
-| buttonStyle    | ViewStyle |  default  | set or override the style object for the button style                  |
-| ImageComponent |   Image   |  default  | set your own component instead of default react-native Image component |
+| Property              |    Type    |  Default  | Description                                                                    |
+| --------------------- | :--------: | :-------: | ------------------------------------------------------------------------------ |
+| cardContainerStyle    | ViewStyle  |  default  | set or override the style object for the modal main container                  |
+| carouselRef           |    any     | undefined | set carouselRef prop for carousel                                              |
+| buttonBackgroundColor |   string   |  #21AE79  | change the button's text color                                                 |
+| buttonText            |   string   | Let's Go  | change the button's text                                                       |
+| disableBottomButton   |  boolean   |   false   | set visibility of the bottom button                                            |
+| buttonContainer       |    any     |  default  | set your own component instead of default bottom button component              |
+| buttonTextColor       |   string   |  #fefefe  | change the button's text color                                                 |
+| carouselComponent     |    any     |  default  | set your own component instead of default react-native-snap-carousel component |
+| titleStyle            | TitleStyle |  default  | set or override the style object for the title text style                      |
+| subtitleStyle         | TitleStyle |  default  | set or override the style object for the subtitle text style                   |
+| photoStyle            | ImageStyle |  default  | set or override the style object for the photo style                           |
+| cardBackgroundColor   |   string   |  #fefefe  | change modal backgroundColor                                                   |
+| onBottomButtonPress   |  function  |  default  | handle bottom button is pressed                                                |
 
 ## Future Plans
 
 - [x] ~~LICENSE~~
-- [ ] Write an article about the lib on Medium
 
 # Change Log
 
@@ -103,4 +106,4 @@ Sevval Eygul, sevvalleygull@gmail.com
 
 ## License
 
-React Native Typescript Library Starter is available under the MIT license. See the LICENSE file for more info.
+React Native Onboarding Modal is available under the MIT license. See the LICENSE file for more info.

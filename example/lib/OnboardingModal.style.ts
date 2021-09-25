@@ -1,5 +1,4 @@
 import {ViewStyle, StyleSheet, Dimensions, TextStyle} from 'react-native';
-const windowHeight = Dimensions.get('window').height;
 interface Style {
   container: ViewStyle;
 }
