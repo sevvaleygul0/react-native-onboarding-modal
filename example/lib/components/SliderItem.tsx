@@ -1,12 +1,28 @@
 import React, {Component} from 'react';
-import {View, Image, Text} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  TextStyle,
+  ViewStyle,
+  ImageStyle,
+} from 'react-native';
 /**
  * ? Local Imports
  */
-import styles, {_contentContainer} from './SliderItem.style';
+import styles, {
+  _contentContainer,
+  _titleTextStyle,
+  _subtitleTextStyle,
+} from './SliderItem.style';
 
 interface IProps {
   data: any;
+  photoStyle: ImageStyle;
+  titleStyle: TextStyle;
+  subtitleStyle: TextStyle;
+  titleColor?: string;
+  subtitleColor?: string;
 }
 
 interface IState {}
@@ -22,18 +38,30 @@ export default class ClassComponent extends Component<IProps, IState> {
   }
 
   renderPhoto = () => (
-    <Image style={styles.photoStyle} source={this.props.data.illustration} />
+    <Image
+      style={[this.props.photoStyle, styles.photoStyle]}
+      source={this.props.data.illustration}
+    />
   );
 
   renderTitle = () => (
     <View style={styles.textContainer}>
-      <Text style={styles.textStyle}>{this.props.data.title}</Text>
+      <Text
+        style={[this.props.titleStyle, _titleTextStyle(this.props.titleColor)]}>
+        {this.props.data.title}
+      </Text>
     </View>
   );
 
   renderDescription = () => (
     <View style={styles.textContainer}>
-      <Text style={styles.subtitleTextStyle}>{this.props.data.subtitle}</Text>
+      <Text
+        style={[
+          this.props.subtitleStyle,
+          _subtitleTextStyle(this.props.subtitleColor),
+        ]}>
+        {this.props.data.subtitle}
+      </Text>
     </View>
   );
 

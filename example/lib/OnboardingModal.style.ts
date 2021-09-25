@@ -2,7 +2,6 @@ import {ViewStyle, StyleSheet, Dimensions, TextStyle} from 'react-native';
 const windowHeight = Dimensions.get('window').height;
 interface Style {
   container: ViewStyle;
-  buttonTextStyle: TextStyle;
 }
 
 export const _buttonStyle = (backgroundColor?: string): ViewStyle => ({
@@ -22,15 +21,16 @@ export const _buttonStyle = (backgroundColor?: string): ViewStyle => ({
   },
 });
 
+export const _buttonTextStyle = (textColor?: string): TextStyle => ({
+  fontWeight: '500',
+  color: textColor || '#fefefe',
+});
+
 export default StyleSheet.create<Style>({
   container: {
     height: windowHeight * 0.6,
     backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  buttonTextStyle: {
-    fontWeight: '500',
-    color: '#fefefe',
   },
 });

@@ -11,10 +11,22 @@ const windowHeight = Dimensions.get('window').height;
 
 interface Style {
   textContainer: ViewStyle;
-  textStyle: TextStyle;
   photoStyle: ImageStyle;
-  subtitleTextStyle: TextStyle;
 }
+
+export const _titleTextStyle = (color?: string): TextStyle => ({
+  textAlign: 'center',
+  fontSize: 28,
+  fontWeight: '600',
+  color: color || '#fff',
+});
+
+export const _subtitleTextStyle = (color?: string): TextStyle => ({
+  textAlign: 'center',
+  fontSize: 16,
+  fontWeight: '400',
+  color: color || '#23285B',
+});
 
 export const _contentContainer = (backgroundColor?: string): ViewStyle => ({
   backgroundColor: backgroundColor ? backgroundColor : '#DEDAF1',
@@ -26,23 +38,12 @@ export const _contentContainer = (backgroundColor?: string): ViewStyle => ({
 
 export default StyleSheet.create<Style>({
   textContainer: {
-    marginTop: 24,
+    marginTop: 12,
     width: windowWidth * 0.7,
   },
-  textStyle: {
-    textAlign: 'center',
-    fontSize: 28,
-    fontWeight: '600',
-    color: '#fff',
-  },
+
   photoStyle: {
     height: 260,
     width: 260,
-  },
-  subtitleTextStyle: {
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '400',
-    color: '#23285B',
   },
 });
