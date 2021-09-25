@@ -5,6 +5,9 @@ import {
   Text,
   TouchableOpacity,
   ViewStyle,
+  TextStyle,
+  StyleProp,
+  ImageStyle,
 } from 'react-native';
 import Modal from 'react-native-modal';
 import Carousel from 'react-native-snap-carousel';
@@ -15,19 +18,28 @@ import SliderItem from './components/SliderItem';
 import styles, {_buttonStyle, _buttonTextStyle} from './OnboardingModal.style';
 
 const windowWidth = Dimensions.get('window').width;
+
+type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
+type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomImageStyleProp =
+  | StyleProp<ImageStyle>
+  | Array<StyleProp<ImageStyle>>;
+
 interface IProps {
-  containerStyle: any;
+  containerStyle: CustomViewStyleProp;
   onboardingData: any;
   carouselRef: any;
   buttonBackgroundColor?: string;
-  cardBackgroundColor?: string;
   buttonText?: string;
   disableBottomButton?: boolean;
-  buttonContainer?: any;
+  buttonContainer?: CustomViewStyleProp;
   buttonTextColor?: string;
-  sliderItemComponent?: any;
   onBottomButtonPress?: () => void;
   carouselComponent: any;
+  titleStyle?: CustomTextStyleProp;
+  subtitleStyle?: CustomTextStyleProp;
+  photoStyle?: CustomImageStyleProp;
+  cardBackgroundColor?: string;
 }
 
 interface IState {}

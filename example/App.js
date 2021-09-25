@@ -6,18 +6,18 @@ import OnboardingModal from './lib/OnboardingModal.tsx';
 
 const onboardingData = [
   {
-    title: 'My Garden',
-    subtitle: 'I am beautifying my garden',
+    title: 'Love Nature',
+    subtitle: "Let's live close to nature",
     illustration: require('./lib/assets/watering.png'),
   },
   {
     title: 'Flower Care',
-    subtitle: 'Care for flowers at the beginning of spring',
+    subtitle: 'Flowers are our constant friends',
     illustration: require('./lib/assets/watering-2.png'),
   },
   {
-    title: 'My Garden',
-    subtitle: 'I am beautifying my garden',
+    title: 'Love Nature',
+    subtitle: 'Nature always wears the colors of the spirit',
     illustration: require('./lib/assets/watering-3.png'),
   },
 ];

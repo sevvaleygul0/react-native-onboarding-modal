@@ -16,24 +16,24 @@ interface Style {
 
 export const _titleTextStyle = (color?: string): TextStyle => ({
   textAlign: 'center',
-  fontSize: 28,
+  fontSize: 32,
   fontWeight: '600',
-  color: color || '#fff',
+  color: color || '#568460',
 });
 
 export const _subtitleTextStyle = (color?: string): TextStyle => ({
   textAlign: 'center',
-  fontSize: 16,
-  fontWeight: '400',
-  color: color || '#23285B',
+  fontSize: 18,
+  fontWeight: '500',
+  color: color || '#9F9E9E',
 });
 
 export const _contentContainer = (backgroundColor?: string): ViewStyle => ({
-  backgroundColor: backgroundColor ? backgroundColor : '#DEDAF1',
+  backgroundColor: backgroundColor ? backgroundColor : '#fefefe',
   justifyContent: 'center',
   alignItems: 'center',
   borderRadius: 20,
-  height: windowHeight * 0.5,
+  height: windowHeight * 0.45,
 });
 
 export default StyleSheet.create<Style>({
@@ -41,9 +41,8 @@ export default StyleSheet.create<Style>({
     marginTop: 12,
     width: windowWidth * 0.7,
   },
-
   photoStyle: {
-    height: 260,
-    width: 260,
+    height: 200,
+    width: 200,
   },
 });

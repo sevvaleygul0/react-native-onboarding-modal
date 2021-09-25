@@ -1,12 +1,5 @@
 import React, {Component} from 'react';
-import {
-  View,
-  Image,
-  Text,
-  TextStyle,
-  ViewStyle,
-  ImageStyle,
-} from 'react-native';
+import {View, Image, Text, TextStyle, ImageStyle} from 'react-native';
 /**
  * ? Local Imports
  */
@@ -18,11 +11,12 @@ import styles, {
 
 interface IProps {
   data: any;
-  photoStyle: ImageStyle;
-  titleStyle: TextStyle;
-  subtitleStyle: TextStyle;
+  photoStyle?: ImageStyle;
+  titleStyle?: TextStyle;
+  subtitleStyle?: TextStyle;
   titleColor?: string;
   subtitleColor?: string;
+  cardBackgroundColor?: string;
 }
 
 interface IState {}
@@ -31,10 +25,6 @@ export default class ClassComponent extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {};
-  }
-
-  componentDidMount() {
-    console.log(this.props);
   }
 
   renderPhoto = () => (
@@ -66,7 +56,7 @@ export default class ClassComponent extends Component<IProps, IState> {
   );
 
   renderContent = () => (
-    <View style={_contentContainer()}>
+    <View style={_contentContainer(this.props.cardBackgroundColor)}>
       {this.renderPhoto()}
       {this.renderTitle()}
       {this.renderDescription()}
