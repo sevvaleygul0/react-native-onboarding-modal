@@ -28,7 +28,7 @@ const onboardingData = [
 ];
 
 const App = () => {
-  const [isModalVisible, setIsModalVisible] = React.useState(true);
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
   return (
     <SafeAreaView style={styles.scrollView}>
       <TouchableOpacity

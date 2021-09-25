@@ -1,8 +1,8 @@
-<img alt="React Native Typescript Library Starter" src="assets/logo.png" width="1050"/>
+<img alt="React Native Typescript Library Starter" src="assets/onboarding-modal.png" width="1050"/>
 
 <p align="center">
   <img alt="React Native Typescript Library Starter"
-        src="assets/Screenshots/typescript.jpg" />
+        src="assets/Screenshots/onboarding-modal.gif" />
 </p>
 
 # Installation
