@@ -15,7 +15,7 @@ export const _buttonStyle = (backgroundColor?: string): ViewStyle => ({
   elevation: 5,
   shadowRadius: 8,
   shadowOpacity: 0.5,
-  shadowColor: '#21AE79',
+  shadowColor: backgroundColor ? backgroundColor : '#21AE79',
   shadowOffset: {
     width: 0,
     height: 3,
@@ -24,6 +24,7 @@ export const _buttonStyle = (backgroundColor?: string): ViewStyle => ({
 
 export const _buttonTextStyle = (textColor?: string): TextStyle => ({
   fontWeight: '500',
+  fontSize: 17,
   color: textColor || '#fefefe',
 });
 

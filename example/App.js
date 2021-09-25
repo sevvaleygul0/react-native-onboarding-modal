@@ -1,5 +1,12 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Dimensions, View, Text} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Dimensions,
+  View,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 import OnboardingModal from './lib/OnboardingModal.tsx';
@@ -27,18 +34,42 @@ const windowWidth = Dimensions.get('window').width;
 const App = () => {
   const [isModalVisible, setIsModalVisible] = React.useState(true);
   return (
-    <OnboardingModal
-      isVisible={isModalVisible}
-      onboardingData={onboardingData}
-      buttonText="Let's Go"
-      onBottomButtonPress={() => setIsModalVisible(false)}
-    />
+    <SafeAreaView style={styles.scrollView}>
+      <TouchableOpacity
+        style={styles.buttonStyle}
+        onPress={() => setIsModalVisible(true)}>
+        <Text style={styles.buttonTextStyle}>Open Onboarding Modal</Text>
+      </TouchableOpacity>
+      <OnboardingModal
+        isVisible={isModalVisible}
+        onboardingData={onboardingData}
+        buttonText="Let's Go"
+        onBottomButtonPress={() => setIsModalVisible(false)}
+      />
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: '#fefefe',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonStyle: {
+    width: 210,
+    height: 50,
+    borderWidth: 2,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#21C879',
+  },
+  buttonTextStyle: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#084E33',
   },
 });
 

@@ -11,10 +11,10 @@ import {
 } from 'react-native';
 import Modal from 'react-native-modal';
 import Carousel from 'react-native-snap-carousel';
-import SliderItem from './components/SliderItem';
 /**
  * ? Local Imports
  */
+import SliderItem from './components/SliderItem';
 import styles, {_buttonStyle, _buttonTextStyle} from './OnboardingModal.style';
 
 const windowWidth = Dimensions.get('window').width;
