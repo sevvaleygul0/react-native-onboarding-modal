@@ -14,6 +14,7 @@ import Carousel from 'react-native-snap-carousel';
 /**
  * ? Local Imports
  */
+import {IOnboardingModal} from './models';
 import SliderItem from './components/SliderItem';
 import styles, {_buttonStyle, _buttonTextStyle} from './OnboardingModal.style';
 
@@ -26,49 +27,43 @@ type CustomImageStyleProp =
   | Array<StyleProp<ImageStyle>>;
 
 interface IProps {
-  cardContainerStyle?: CustomViewStyleProp;
-  onboardingData: any;
   carouselRef?: any;
+  cardContainerStyle?: CustomViewStyleProp;
+  onboardingData: Array<IOnboardingModal>;
   buttonBackgroundColor?: string;
   buttonText?: string;
   disableBottomButton?: boolean;
   buttonContainer?: CustomViewStyleProp;
   buttonTextColor?: string;
   onBottomButtonPress?: () => void;
-  carouselComponent?: any;
   titleStyle?: CustomTextStyleProp;
   subtitleStyle?: CustomTextStyleProp;
   photoStyle?: CustomImageStyleProp;
-  cardBackgroundColor?: string;
+  carouselItemContainer: (item: IOnboardingModal) => CustomViewStyleProp;
 }
 
 interface IState {}
 
 export default class OnboardingModal extends Component<IProps, IState> {
-  carouselRef = React.createRef<any>();
-  constructor(props: IProps) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {}
-
   carouselRenderItem = (item: any) => (
     <SliderItem {...this.props} data={item} />
   );
 
   renderCarousel = () => {
     return (
-      this.props.carouselComponent || (
-        <Carousel
-          {...this.props}
-          ref={this.props.carouselRef}
-          data={this.props.onboardingData}
-          renderItem={({item}) => this.carouselRenderItem(item)}
-          sliderWidth={windowWidth * 0.95}
-          itemWidth={windowWidth * 0.75}
-        />
-      )
+      <Carousel
+        {...this.props}
+        ref={this.props.carouselRef}
+        data={this.props.onboardingData}
+        renderItem={({item}) =>
+          this.props.carouselItemContainer &&
+          this.props.carouselItemContainer(item)
+            ? this.props.carouselItemContainer(item)
+            : this.carouselRenderItem(item)
+        }
+        sliderWidth={windowWidth * 0.95}
+        itemWidth={windowWidth * 0.75}
+      />
     );
   };
 
@@ -87,9 +82,8 @@ export default class OnboardingModal extends Component<IProps, IState> {
           </TouchableOpacity>
         )
       );
-    } else {
-      return null;
     }
+    return null;
   };
 
   renderOnboardingContent = () => (
@@ -99,18 +93,16 @@ export default class OnboardingModal extends Component<IProps, IState> {
     </View>
   );
 
-  renderContent = () => (
-    <Modal
-      {...this.props}
-      animationIn="fadeInUp"
-      animationInTiming={750}
-      animationOut="fadeOutDown"
-      animationOutTiming={750}>
-      {this.renderOnboardingContent()}
-    </Modal>
-  );
-
   render() {
-    return this.renderContent();
+    return (
+      <Modal
+        {...this.props}
+        animationIn="fadeInUp"
+        animationInTiming={750}
+        animationOut="fadeOutDown"
+        animationOutTiming={750}>
+        {this.renderOnboardingContent()}
+      </Modal>
+    );
   }
 }
