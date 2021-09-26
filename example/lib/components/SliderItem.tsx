@@ -32,7 +32,7 @@ export default class SliderItem extends Component<IProps, IState> {
   renderPhoto = () => (
     <Image
       style={[styles.photoStyle, this.props.photoStyle]}
-      source={this.props.data.illustration}
+      source={this.props.data.asset}
     />
   );
 
