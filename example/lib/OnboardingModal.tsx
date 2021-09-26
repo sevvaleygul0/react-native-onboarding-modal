@@ -14,6 +14,8 @@ import Carousel from 'react-native-snap-carousel';
 /**
  * ? Local Imports
  */
+import {IOnboardingModal} from './models';
+
 import SliderItem from './components/SliderItem';
 import styles, {_buttonStyle, _buttonTextStyle} from './OnboardingModal.style';
 
@@ -27,7 +29,7 @@ type CustomImageStyleProp =
 
 interface IProps {
   cardContainerStyle?: CustomViewStyleProp;
-  onboardingData: any;
+  onboardingData: Array<IOnboardingModal>;
   carouselRef?: any;
   buttonBackgroundColor?: string;
   buttonText?: string;
