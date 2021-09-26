@@ -10,33 +10,21 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 interface Style {
+  contentContainer: ViewStyle;
   textContainer: ViewStyle;
   photoStyle: ImageStyle;
+  titleTextStyle: TextStyle;
+  subtitleTextStyle: TextStyle;
 }
 
-export const _titleTextStyle = (color?: string): TextStyle => ({
-  textAlign: 'center',
-  fontSize: 32,
-  fontWeight: '600',
-  color: color || '#568460',
-});
-
-export const _subtitleTextStyle = (color?: string): TextStyle => ({
-  textAlign: 'center',
-  fontSize: 18,
-  fontWeight: '500',
-  color: color || '#9F9E9E',
-});
-
-export const _contentContainer = (backgroundColor?: string): ViewStyle => ({
-  backgroundColor: backgroundColor ? backgroundColor : '#fefefe',
-  justifyContent: 'center',
-  alignItems: 'center',
-  borderRadius: 20,
-  height: windowHeight * 0.45,
-});
-
 export default StyleSheet.create<Style>({
+  contentContainer: {
+    backgroundColor: '#fefefe',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    height: windowHeight * 0.45,
+  },
   textContainer: {
     marginTop: 12,
     width: windowWidth * 0.7,
@@ -44,5 +32,17 @@ export default StyleSheet.create<Style>({
   photoStyle: {
     height: 200,
     width: 200,
+  },
+  titleTextStyle: {
+    textAlign: 'center',
+    fontSize: 32,
+    fontWeight: '600',
+    color: '#568460',
+  },
+  subtitleTextStyle: {
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#9F9E9E',
   },
 });

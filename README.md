@@ -89,7 +89,6 @@ const exampleData = {
 | titleStyle            | TitleStyle |  default  | set or override the style object for the title text style                      |
 | subtitleStyle         | TitleStyle |  default  | set or override the style object for the subtitle text style                   |
 | photoStyle            | ImageStyle |  default  | set or override the style object for the photo style                           |
-| cardBackgroundColor   |   string   |  #fefefe  | change modal backgroundColor                                                   |
 | onBottomButtonPress   |  function  |  default  | handle bottom button is pressed                                                |
 
 ## Future Plans

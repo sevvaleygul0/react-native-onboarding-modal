@@ -11,11 +11,7 @@ import {
 /**
  * ? Local Imports
  */
-import styles, {
-  _contentContainer,
-  _titleTextStyle,
-  _subtitleTextStyle,
-} from './SliderItem.style';
+import styles from './SliderItem.style';
 
 type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 
@@ -32,23 +28,17 @@ interface IProps {
 
 interface IState {}
 
-export default class ClassComponent extends Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
-    this.state = {};
-  }
-
+export default class SliderItem extends Component<IProps, IState> {
   renderPhoto = () => (
     <Image
-      style={[this.props.photoStyle, styles.photoStyle]}
+      style={[styles.photoStyle, this.props.photoStyle]}
       source={this.props.data.illustration}
     />
   );
 
   renderTitle = () => (
     <View style={styles.textContainer}>
-      <Text
-        style={[this.props.titleStyle, _titleTextStyle(this.props.titleColor)]}>
+      <Text style={[styles.titleTextStyle, this.props.titleStyle]}>
         {this.props.data.title}
       </Text>
     </View>
@@ -56,22 +46,14 @@ export default class ClassComponent extends Component<IProps, IState> {
 
   renderDescription = () => (
     <View style={styles.textContainer}>
-      <Text
-        style={[
-          this.props.subtitleStyle,
-          _subtitleTextStyle(this.props.subtitleColor),
-        ]}>
+      <Text style={[styles.subtitleTextStyle, this.props.subtitleStyle]}>
         {this.props.data.subtitle}
       </Text>
     </View>
   );
 
   renderContent = () => (
-    <View
-      style={[
-        this.props.cardContainerStyle,
-        _contentContainer(this.props.cardBackgroundColor),
-      ]}>
+    <View style={[styles.contentContainer, this.props.cardContainerStyle]}>
       {this.renderPhoto()}
       {this.renderTitle()}
       {this.renderDescription()}

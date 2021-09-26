@@ -39,20 +39,11 @@ interface IProps {
   titleStyle?: CustomTextStyleProp;
   subtitleStyle?: CustomTextStyleProp;
   photoStyle?: CustomImageStyleProp;
-  cardBackgroundColor?: string;
 }
 
 interface IState {}
 
 export default class OnboardingModal extends Component<IProps, IState> {
-  carouselRef = React.createRef<any>();
-  constructor(props: IProps) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {}
-
   carouselRenderItem = (item: any) => (
     <SliderItem {...this.props} data={item} />
   );
@@ -87,9 +78,8 @@ export default class OnboardingModal extends Component<IProps, IState> {
           </TouchableOpacity>
         )
       );
-    } else {
-      return null;
     }
+    return null;
   };
 
   renderOnboardingContent = () => (
@@ -99,18 +89,16 @@ export default class OnboardingModal extends Component<IProps, IState> {
     </View>
   );
 
-  renderContent = () => (
-    <Modal
-      {...this.props}
-      animationIn="fadeInUp"
-      animationInTiming={750}
-      animationOut="fadeOutDown"
-      animationOutTiming={750}>
-      {this.renderOnboardingContent()}
-    </Modal>
-  );
-
   render() {
-    return this.renderContent();
+    return (
+      <Modal
+        {...this.props}
+        animationIn="fadeInUp"
+        animationInTiming={750}
+        animationOut="fadeOutDown"
+        animationOutTiming={750}>
+        {this.renderOnboardingContent()}
+      </Modal>
+    );
   }
 }
