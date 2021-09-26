@@ -24,6 +24,7 @@ interface IProps {
   subtitleColor?: string;
   cardBackgroundColor?: string;
   cardContainerStyle?: CustomViewStyleProp;
+  carouselItemContainer?: CustomViewStyleProp;
 }
 
 interface IState {}

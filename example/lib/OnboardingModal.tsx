@@ -15,7 +15,6 @@ import Carousel from 'react-native-snap-carousel';
  * ? Local Imports
  */
 import {IOnboardingModal} from './models';
-
 import SliderItem from './components/SliderItem';
 import styles, {_buttonStyle, _buttonTextStyle} from './OnboardingModal.style';
 
@@ -28,19 +27,19 @@ type CustomImageStyleProp =
   | Array<StyleProp<ImageStyle>>;
 
 interface IProps {
+  carouselRef?: any;
   cardContainerStyle?: CustomViewStyleProp;
   onboardingData: Array<IOnboardingModal>;
-  carouselRef?: any;
   buttonBackgroundColor?: string;
   buttonText?: string;
   disableBottomButton?: boolean;
   buttonContainer?: CustomViewStyleProp;
   buttonTextColor?: string;
   onBottomButtonPress?: () => void;
-  carouselComponent?: any;
   titleStyle?: CustomTextStyleProp;
   subtitleStyle?: CustomTextStyleProp;
   photoStyle?: CustomImageStyleProp;
+  carouselItemContainer: (item: IOnboardingModal) => CustomViewStyleProp;
 }
 
 interface IState {}
@@ -52,16 +51,19 @@ export default class OnboardingModal extends Component<IProps, IState> {
 
   renderCarousel = () => {
     return (
-      this.props.carouselComponent || (
-        <Carousel
-          {...this.props}
-          ref={this.props.carouselRef}
-          data={this.props.onboardingData}
-          renderItem={({item}) => this.carouselRenderItem(item)}
-          sliderWidth={windowWidth * 0.95}
-          itemWidth={windowWidth * 0.75}
-        />
-      )
+      <Carousel
+        {...this.props}
+        ref={this.props.carouselRef}
+        data={this.props.onboardingData}
+        renderItem={({item}) =>
+          this.props.carouselItemContainer &&
+          this.props.carouselItemContainer(item)
+            ? this.props.carouselItemContainer(item)
+            : this.carouselRenderItem(item)
+        }
+        sliderWidth={windowWidth * 0.95}
+        itemWidth={windowWidth * 0.75}
+      />
     );
   };
 

@@ -35,11 +35,11 @@ import OnboardingModal from "react-native-onboarding-modal";
 ## Data Format
 
 ```jsx
-const exampleData = {
+const exampleData: IOnboardingModal = {
   {
     title: 'Love Nature',
     subtitle: "Let's live close to nature",
-    illustration: require('./assets/watering.png'),
+    asset: require('./assets/watering.png'),
   },
 }
 ```
@@ -70,26 +70,26 @@ const exampleData = {
 
 ## Fundamentals
 
-| Property       | Type |  Default  | Description                  |
-| -------------- | :--: | :-------: | ---------------------------- |
-| onboardingData | any  | undefined | set data data shown in modal |
+| Property       |       Type       |  Default  | Description             |
+| -------------- | :--------------: | :-------: | ----------------------- |
+| onboardingData | IOnboardingModal | undefined | set data shown in modal |
 
 ## Customization (Optionals)
 
-| Property              |    Type    |  Default  | Description                                                                    |
-| --------------------- | :--------: | :-------: | ------------------------------------------------------------------------------ |
-| cardContainerStyle    | ViewStyle  |  default  | set or override the style object for the modal main container                  |
-| carouselRef           |    any     | undefined | set carouselRef prop for carousel                                              |
-| buttonBackgroundColor |   string   |  #21AE79  | change the button's text color                                                 |
-| buttonText            |   string   | Let's Go  | change the button's text                                                       |
-| disableBottomButton   |  boolean   |   false   | set visibility of the bottom button                                            |
-| buttonContainer       |    any     |  default  | set your own component instead of default bottom button component              |
-| buttonTextColor       |   string   |  #fefefe  | change the button's text color                                                 |
-| carouselComponent     |    any     |  default  | set your own component instead of default react-native-snap-carousel component |
-| titleStyle            | TitleStyle |  default  | set or override the style object for the title text style                      |
-| subtitleStyle         | TitleStyle |  default  | set or override the style object for the subtitle text style                   |
-| photoStyle            | ImageStyle |  default  | set or override the style object for the photo style                           |
-| onBottomButtonPress   |  function  |  default  | handle bottom button is pressed                                                |
+| Property              |        Type         |  Default  | Description                                                                    |
+| --------------------- | :-----------------: | :-------: | ------------------------------------------------------------------------------ |
+| carouselRef           |         any         | undefined | set carouselRef prop for carousel                                              |
+| disableBottomButton   |       boolean       |   false   | set visibility of the bottom button                                            |
+| buttonContainer       | CustomViewStyleProp |  default  | set your own component instead of default bottom button component              |
+| buttonBackgroundColor |       string        |  #21AE79  | change the button's text color                                                 |
+| buttonText            |       string        | Let's Go  | change the button's text                                                       |
+| buttonTextColor       |       string        |  #fefefe  | change the button's text color                                                 |
+| onBottomButtonPress   |      function       |  default  | handle bottom button is pressed                                                |
+| cardContainerStyle    |      ViewStyle      |  default  | set or override the style object for the modal main container                  |
+| carouselItemContainer | CustomViewStyleProp |  default  | set your own component instead of default react-native-snap-carousel component |
+| titleStyle            |     TitleStyle      |  default  | set or override the style object for the title text style                      |
+| subtitleStyle         |     TitleStyle      |  default  | set or override the style object for the subtitle text style                   |
+| photoStyle            |     ImageStyle      |  default  | set or override the style object for the photo style                           |
 
 ## Future Plans
 
