@@ -35,7 +35,7 @@ import OnboardingModal from "react-native-onboarding-modal";
 ## Data Format
 
 ```jsx
-const exampleData: IOnboardingModal = {
+const exampleData: IOnboardingModal = [
   {
     title: 'Love Nature',
     subtitle: "Let's live close to nature",
