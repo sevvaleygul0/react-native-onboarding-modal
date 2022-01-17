@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import {
   View,
   Dimensions,
@@ -54,7 +54,7 @@ interface IProps {
 
 interface IState {}
 
-export default class OnboardingModal extends Component<IProps, IState> {
+export default class OnboardingModal extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
   }

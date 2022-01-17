@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from "react";
 import {
   View,
   Image,
@@ -7,12 +7,12 @@ import {
   ImageStyle,
   ViewStyle,
   StyleProp,
-} from 'react-native';
+} from "react-native";
 /**
  * ? Local Imports
  */
-import styles from './SliderItem.style';
-import {IOnboardingModal} from '../OnboardingModal';
+import styles from "./SliderItem.style";
+import { IOnboardingModal } from "../OnboardingModal";
 
 type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 
@@ -30,7 +30,7 @@ interface IProps {
 
 interface IState {}
 
-export default class SliderItem extends Component<IProps, IState> {
+export default class SliderItem extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
   }

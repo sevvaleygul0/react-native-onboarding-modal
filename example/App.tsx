@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {SafeAreaView, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 import OnboardingModal, {IOnboardingModal} from 'react-native-onboarding-modal';
