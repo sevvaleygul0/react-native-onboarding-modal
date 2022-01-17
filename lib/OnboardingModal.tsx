@@ -14,9 +14,19 @@ import Carousel from 'react-native-snap-carousel';
 /**
  * ? Local Imports
  */
-import {IOnboardingModal} from './models';
 import SliderItem from './components/SliderItem';
 import styles, {_buttonStyle, _buttonTextStyle} from './OnboardingModal.style';
+/**
+ * ? Models
+ */
+export type IOnboardingModal = {
+  title: string;
+  subtitle: string;
+  asset: Asset | string;
+};
+type Asset = {
+  uri: string;
+};
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -45,7 +55,7 @@ interface IProps {
 interface IState {}
 
 export default class OnboardingModal extends Component<IProps, IState> {
-  carouselRenderItem = (item: any) => (
+  carouselRenderItem = (item: IOnboardingModal) => (
     <SliderItem {...this.props} data={item} />
   );
 

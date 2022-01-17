@@ -12,11 +12,12 @@ import {
  * ? Local Imports
  */
 import styles from './SliderItem.style';
+import {IOnboardingModal} from '../OnboardingModal';
 
 type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 
 interface IProps {
-  data: any;
+  data: IOnboardingModal;
   photoStyle?: ImageStyle;
   titleStyle?: TextStyle;
   subtitleStyle?: TextStyle;

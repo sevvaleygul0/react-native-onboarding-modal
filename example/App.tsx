@@ -1,31 +1,28 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-import OnboardingModal from './lib/OnboardingModal.tsx';
+import OnboardingModal, {IOnboardingModal} from 'react-native-onboarding-modal';
 
-const onboardingData = [
+const onboardingData: IOnboardingModal[] = [
   {
     title: 'Love Nature',
     subtitle: "Let's live close to nature",
     asset: {
-      uri:
-        'https://cdn.dribbble.com/users/1174720/screenshots/10850813/media/75ea855c008a60be82b526abd12275f2.png?compress=1&resize=1600x1200',
+      uri: 'https://cdn.dribbble.com/users/1174720/screenshots/10850813/media/75ea855c008a60be82b526abd12275f2.png?compress=1&resize=1600x1200',
     },
   },
   {
     title: 'Flower Care',
     subtitle: 'Flowers are our constant friends',
     asset: {
-      uri:
-        'https://cdn.dribbble.com/users/1450874/screenshots/14775888/media/1e3914999f912fff2d3c6b0d8b66248c.jpg?compress=1&resize=1600x1200',
+      uri: 'https://cdn.dribbble.com/users/1450874/screenshots/14775888/media/1e3914999f912fff2d3c6b0d8b66248c.jpg?compress=1&resize=1600x1200',
     },
   },
   {
     title: 'Love Nature',
     subtitle: 'Nature always wears the colors of the spirit',
     asset: {
-      uri:
-        'https://cdn.dribbble.com/users/118065/screenshots/10741791/media/c9965247f5c21db97009d71784d9ace3.gif',
+      uri: 'https://cdn.dribbble.com/users/118065/screenshots/10741791/media/c9965247f5c21db97009d71784d9ace3.gif',
     },
   },
 ];

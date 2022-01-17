@@ -2,7 +2,8 @@
 
 <p align="center">
   <img alt="React Native Typescript Library Starter"
-        src="assets/Screenshots/onboarding-modal.gif" />
+        src="assets/Screenshots/onboarding-modal.gif" height="820"/>
+  <img alt="React Native Typescript Library Starter" src="assets/Screenshots/onboarding-modal.png" height="820"/>
 </p>
 
 # Installation
@@ -18,8 +19,6 @@ npm i react-native-onboarding-modal
 <h5><i>IMPORTANT! You need install them</i></h5>
 
 ```js
-"react": ">= 16.x.x",
-"react-native": ">= 0.55.x",
 "react-native-modal": ">=  13.0.0",
 "react-native-snap-carousel": ">=  3.9.1"
 ```
@@ -29,7 +28,7 @@ npm i react-native-onboarding-modal
 ## Import
 
 ```jsx
-import OnboardingModal from "react-native-onboarding-modal";
+import OnboardingModal, { IOnboardingModal } from "react-native-onboarding-modal";
 ```
 
 ## Data Format
