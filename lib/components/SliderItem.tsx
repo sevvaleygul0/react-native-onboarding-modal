@@ -31,6 +31,10 @@ interface IProps {
 interface IState {}
 
 export default class SliderItem extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+  }
+
   renderPhoto = () => (
     <Image
       style={[styles.photoStyle, this.props.photoStyle]}

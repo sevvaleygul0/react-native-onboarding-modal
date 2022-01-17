@@ -1,6 +1,6 @@
 {
   "name": "react-native-onboarding-modal",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "./build/dist/OnboardingModal.js",
   "repository": "https://github.com/sevvaleygul0/react-native-onboarding-modal",

@@ -55,6 +55,10 @@ interface IProps {
 interface IState {}
 
 export default class OnboardingModal extends Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+  }
+
   carouselRenderItem = (item: IOnboardingModal) => (
     <SliderItem {...this.props} data={item} />
   );

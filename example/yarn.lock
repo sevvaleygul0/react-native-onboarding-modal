@@ -1237,7 +1237,7 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*":
+"@types/react-native@*", "@types/react-native@^0.66.12":
   "integrity" "sha512-4qQwvfXzVtik/cN/13wwH0cIMHYLzQ40iRazVdEEhjzz8YpNrkESSUUMsSE683YSse4zLShHQYWeI1x2/zB1BA=="
   "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.66.12.tgz"
   "version" "0.66.12"
@@ -1378,6 +1378,11 @@
   "integrity" "sha512-XtGIhXwF8YM8bJhGxG5kXgjkEuNGLTkoYqVE+KMR+aspr4KGYmKYg7yUe3KghyQ9yheNwLnjmzh/7+gfDBmHCQ=="
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-6.4.2.tgz"
   "version" "6.4.2"
+
+"add@^2.0.6":
+  "integrity" "sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU="
+  "resolved" "https://registry.npmjs.org/add/-/add-2.0.6.tgz"
+  "version" "2.0.6"
 
 "ajv@^6.10.0", "ajv@^6.10.2", "ajv@^6.12.3":
   "integrity" "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="
@@ -5248,6 +5253,11 @@
   "resolved" "https://registry.npmjs.org/options/-/options-0.0.6.tgz"
   "version" "0.0.6"
 
+"or@^0.2.0":
+  "integrity" "sha1-mQTqYeJZQ/k14g9PR0ngoUGoK2o="
+  "resolved" "https://registry.npmjs.org/or/-/or-0.2.0.tgz"
+  "version" "0.2.0"
+
 "ora@^3.4.0":
   "integrity" "sha512-eNwHudNbO1folBP3JsZ19v9azXWtQZjICdr3Q0TDPIaeBQ3mXLrh54wM+er0+hSp+dWKf+Z8KM58CYzEyIYxYg=="
   "resolved" "https://registry.npmjs.org/ora/-/ora-3.4.0.tgz"
@@ -5586,10 +5596,10 @@
     "prop-types" "^15.6.2"
     "react-native-animatable" "1.3.3"
 
-"react-native-onboarding-modal@^0.0.2":
-  "integrity" "sha512-ev8yZOaLWoJ/otxeBGQvRIAbgmJUZA/8XqR4KVPkEnQMfgSGCq2A348qqROTqJcjqVnJ/4FBxDspgbhSVA5JPQ=="
-  "resolved" "https://registry.npmjs.org/react-native-onboarding-modal/-/react-native-onboarding-modal-0.0.2.tgz"
-  "version" "0.0.2"
+"react-native-onboarding-modal@^0.0.3":
+  "integrity" "sha512-vKZTxGQKmf14g98OFelwGYNJ+7OAt+NhBiKA0q6k8e+iqDBz0Ck/0/dj0GIMSrmc7L9AErjYuLRtN83GyKUmdg=="
+  "resolved" "https://registry.npmjs.org/react-native-onboarding-modal/-/react-native-onboarding-modal-0.0.3.tgz"
+  "version" "0.0.3"
   dependencies:
     "@types/react-native-snap-carousel" "^3.8.4"
     "react-native-modal" "^13.0.0"
@@ -7166,3 +7176,8 @@
     "which-module" "^2.0.0"
     "y18n" "^4.0.0"
     "yargs-parser" "^18.1.2"
+
+"yarn@^1.22.17":
+  "integrity" "sha512-H0p241BXaH0UN9IeH//RT82tl5PfNraVpSpEoW+ET7lmopNC61eZ+A+IDvU8FM6Go5vx162SncDL8J1ZjRBriQ=="
+  "resolved" "https://registry.npmjs.org/yarn/-/yarn-1.22.17.tgz"
+  "version" "1.22.17"
